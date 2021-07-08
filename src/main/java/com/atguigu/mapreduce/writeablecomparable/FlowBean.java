@@ -1,7 +1,5 @@
-package com.atguigu.writeablecomparable;
+package com.atguigu.mapreduce.writeablecomparable;
 
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.io.Writable;
 import org.apache.hadoop.io.WritableComparable;
 
 import java.io.DataInput;

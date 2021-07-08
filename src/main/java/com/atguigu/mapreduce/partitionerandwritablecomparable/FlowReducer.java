@@ -1,11 +1,11 @@
-package com.atguigu.writeablecomparable;
+package com.atguigu.mapreduce.partitionerandwritablecomparable;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 import java.io.IOException;
 
-public class FlowReducer extends Reducer<FlowBean,Text,Text,FlowBean> {
+public class FlowReducer extends Reducer<FlowBean,Text,Text, FlowBean> {
 
     @Override
     protected void reduce(FlowBean key, Iterable<Text> values, Context context) throws IOException, InterruptedException {

@@ -1,4 +1,4 @@
-package com.atguigu.writeablecomparable;
+package com.atguigu.mapreduce.partitionerandwritablecomparable;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -25,9 +25,12 @@ public class FlowDriver {
         //5 设置最终的输出类型
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
+
+        job.setPartitionerClass(ProvincePartitioner2.class);
+        job.setNumReduceTasks(5);
         //6 设置输入路径和输出路径
         FileInputFormat.setInputPaths(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\MRphone"));
-        FileOutputFormat.setOutputPath(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phoneComparable"));
+        FileOutputFormat.setOutputPath(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phonePartitionAndComparable"));
         //7 提交job
         boolean result = job.waitForCompletion(true);
         System.exit(result ? 0 : 1);

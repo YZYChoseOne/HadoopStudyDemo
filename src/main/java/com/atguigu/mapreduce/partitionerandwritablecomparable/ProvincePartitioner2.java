@@ -1,4 +1,4 @@
-package com.atguigu.partitionerandwritablecomparable;
+package com.atguigu.mapreduce.partitionerandwritablecomparable;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Partitioner;

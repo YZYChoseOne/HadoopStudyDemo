@@ -1,8 +1,6 @@
-package com.atguigu.partitionerandwritablecomparable;
+package com.atguigu.mapreduce.partitionerandwritablecomparable;
 
-import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
-import org.apache.hadoop.mapreduce.Partitioner;
 
 import java.io.DataInput;
 import java.io.DataOutput;
