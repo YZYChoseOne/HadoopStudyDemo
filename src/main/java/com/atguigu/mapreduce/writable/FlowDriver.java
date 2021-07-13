@@ -26,8 +26,8 @@ public class FlowDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(FlowBean.class);
         //6 设置输入路径和输出路径
-        FileInputFormat.setInputPaths(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phone_data.txt"));
-        FileOutputFormat.setOutputPath(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phoneResult"));
+        FileInputFormat.setInputPaths(job,new Path("C:\\work\\program\\code\\HadoopStudyDemo\\src\\main\\resources\\phone_data.txt"));
+        FileOutputFormat.setOutputPath(job,new Path("C:\\work\\program\\code\\HadoopStudyDemo\\src\\main\\resources\\phoneResult"));
         //7 提交job
         boolean result = job.waitForCompletion(true);
         System.exit(result ? 0 : 1);

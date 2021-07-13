@@ -29,8 +29,8 @@ public class FlowDriver {
         job.setPartitionerClass(ProvincePartitioner.class);
         job.setNumReduceTasks(5);
         //6 设置输入路径和输出路径
-        FileInputFormat.setInputPaths(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phone_data.txt"));
-        FileOutputFormat.setOutputPath(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phone_partition"));
+        FileInputFormat.setInputPaths(job,new Path("C:\\work\\program\\code\\HadoopStudyDemo\\src\\main\\resources\\phone_data.txt"));
+        FileOutputFormat.setOutputPath(job,new Path("C:\\work\\program\\code\\HadoopStudyDemo\\src\\main\\resources\\phone_partition_DEBUG"));
         //7 提交job
         boolean result = job.waitForCompletion(true);
         System.exit(result ? 0 : 1);
