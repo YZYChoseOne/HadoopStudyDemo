@@ -13,7 +13,12 @@ public class FlowDriver {
     public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
         //1 获取job
         Configuration conf = new Configuration();
+          // 任务执行队列设置
+        //conf.set("mapreduce.job.queuename","hive");
+
         Job job = Job.getInstance(conf);
+
+
         //2 设置jar包路径
         job.setJarByClass(FlowDriver.class);
         //3 关联mapper和reducer
@@ -29,8 +34,6 @@ public class FlowDriver {
         job.setPartitionerClass(ProvincePartitioner.class);
         job.setNumReduceTasks(5);
         //6 设置输入路径和输出路径
-        FileInputFormat.setInputPaths(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phone_data.txt"));
-        FileOutputFormat.setOutputPath(job,new Path("D:\\java_IDEA\\Hadoop-StudyMapReduceDemo\\src\\main\\resources\\phone_partitionDeBug"));
         FileInputFormat.setInputPaths(job,new Path("C:\\work\\program\\code\\HadoopStudyDemo\\src\\main\\resources\\phone_data.txt"));
         FileOutputFormat.setOutputPath(job,new Path("C:\\work\\program\\code\\HadoopStudyDemo\\src\\main\\resources\\phone_partition_DEBUG"));
         //7 提交job
